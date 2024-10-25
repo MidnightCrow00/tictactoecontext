@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+
+import { useContext } from 'react';
 import './App.css';
+import JatekTer from './components/JatekTer';
+import { KattContext } from './context/KattContext';
 
 function App() {
+ const {lista} = useContext(KattContext)
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       <h1>Tic-Tac-Toe</h1>
+
       </header>
+      <article>
+        <div className="jatekter">
+          <JatekTer lista={lista}  />
+        </div>
+      </article>
+      <footer>saját név</footer>
     </div>
   );
 }
